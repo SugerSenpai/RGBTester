@@ -7,7 +7,7 @@ public class ColorPanel extends JPanel {
     ColorSelection selection;
 
     public ColorPanel(ColorSelection selection){
-        this.setPreferredSize(new Dimension(300,300));
+        this.setPreferredSize(new Dimension(350,350));
         this.selection = selection;
     }
 

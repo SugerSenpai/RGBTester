@@ -114,7 +114,7 @@ public class RGBTester extends JFrame implements Runnable {
             public void stateChanged(ChangeEvent e) {
                 colorSelection.setRed(redSlider.getValue());
                 redField.setText(String.valueOf(redSlider.getValue()));
-                rgbColorCodeCopy.setText("Decimal Code: ("+colorSelection.getRed() +"," +colorSelection.getGreen()+ "," + colorSelection.getBlue() + ")" + " Hex Code: " + "#" + Integer.toHexString(colorSelection.getColor().getRGB()));
+                rgbColorCodeCopy.setText(getCodeString());
                 colorPanel.repaint();
             }
         });
@@ -124,7 +124,7 @@ public class RGBTester extends JFrame implements Runnable {
             public void stateChanged(ChangeEvent e) {
                 colorSelection.setGreen(greenSlider.getValue());
                 greenField.setText(String.valueOf(greenSlider.getValue()));
-                rgbColorCodeCopy.setText("Decimal Code: ("+colorSelection.getRed() +"," +colorSelection.getGreen()+ "," + colorSelection.getBlue() + ")" + " Hex Code: " + "#" + Integer.toHexString(colorSelection.getColor().getRGB()));
+                rgbColorCodeCopy.setText(getCodeString());
                 colorPanel.repaint();
             }
         });
@@ -134,7 +134,7 @@ public class RGBTester extends JFrame implements Runnable {
             public void stateChanged(ChangeEvent e) {
                 colorSelection.setBlue(blueSlider.getValue());
                 blueField.setText(String.valueOf(blueSlider.getValue()));
-                rgbColorCodeCopy.setText("Decimal Code: ("+colorSelection.getRed() +"," +colorSelection.getGreen()+ "," + colorSelection.getBlue() + ")" + " Hex Code: " + "#" + Integer.toHexString(colorSelection.getColor().getRGB()));
+                rgbColorCodeCopy.setText(getCodeString());
                 colorPanel.repaint();
             }
         });
@@ -174,10 +174,14 @@ public class RGBTester extends JFrame implements Runnable {
         gbc.gridwidth = 3;
         gbc.gridheight = 1;
 
-        rgbColorCodeCopy = new JTextArea("Decimal Code: ("+colorSelection.getRed() +"," +colorSelection.getGreen()+ "," + colorSelection.getBlue() + ")" + " Hex Code: " + "#" + Integer.toHexString(colorSelection.getColor().getRGB()));
+        rgbColorCodeCopy = new JTextArea(getCodeString());
 
         add(rgbColorCodeCopy,gbc);
 
         pack();
+    }
+
+    public String getCodeString(){
+        return "Decimal Code: ("+colorSelection.getRed() +"," +colorSelection.getGreen()+ "," + colorSelection.getBlue() + ")" + " Hex Code: " + "#" + Integer.toHexString(colorSelection.getColor().getRGB());
     }
 }
