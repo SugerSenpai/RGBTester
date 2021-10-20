@@ -109,64 +109,46 @@ public class RGBTester extends JFrame implements Runnable {
         blueButton = new JButton("Change");
         add(blueButton, gbc);
 
-        redSlider.addChangeListener(new ChangeListener() {
-            @Override
-            public void stateChanged(ChangeEvent e) {
-                colorSelection.setRed(redSlider.getValue());
-                redField.setText(String.valueOf(redSlider.getValue()));
-                rgbColorCodeCopy.setText(getCodeString());
-                colorPanel.repaint();
-            }
+        redSlider.addChangeListener(e -> {
+            colorSelection.setRed(redSlider.getValue());
+            redField.setText(String.valueOf(redSlider.getValue()));
+            rgbColorCodeCopy.setText(getCodeString());
+            colorPanel.repaint();
         });
 
-        greenSlider.addChangeListener(new ChangeListener() {
-            @Override
-            public void stateChanged(ChangeEvent e) {
-                colorSelection.setGreen(greenSlider.getValue());
-                greenField.setText(String.valueOf(greenSlider.getValue()));
-                rgbColorCodeCopy.setText(getCodeString());
-                colorPanel.repaint();
-            }
+        greenSlider.addChangeListener(e -> {
+            colorSelection.setGreen(greenSlider.getValue());
+            greenField.setText(String.valueOf(greenSlider.getValue()));
+            rgbColorCodeCopy.setText(getCodeString());
+            colorPanel.repaint();
         });
 
-        blueSlider.addChangeListener(new ChangeListener() {
-            @Override
-            public void stateChanged(ChangeEvent e) {
-                colorSelection.setBlue(blueSlider.getValue());
-                blueField.setText(String.valueOf(blueSlider.getValue()));
-                rgbColorCodeCopy.setText(getCodeString());
-                colorPanel.repaint();
-            }
+        blueSlider.addChangeListener(e -> {
+            colorSelection.setBlue(blueSlider.getValue());
+            blueField.setText(String.valueOf(blueSlider.getValue()));
+            rgbColorCodeCopy.setText(getCodeString());
+            colorPanel.repaint();
         });
 
-        redButton.addChangeListener(new ChangeListener() {
-            @Override
-            public void stateChanged(ChangeEvent e) {
-                int red = Integer.parseInt(redField.getText());
-                colorSelection.setRed(red);
-                redSlider.setValue(red);
-                colorPanel.repaint();
-            }
+        redButton.addChangeListener(e -> {
+            int red = Integer.parseInt(redField.getText());
+            colorSelection.setRed(red);
+            redSlider.setValue(red);
+            colorPanel.repaint();
         });
 
-        greenButton.addChangeListener(new ChangeListener() {
-            @Override
-            public void stateChanged(ChangeEvent e) {
-                int green = Integer.parseInt(greenField.getText());
-                colorSelection.setGreen(green);
-                greenSlider.setValue(green);
-                colorPanel.repaint();
-            }
+        greenButton.addChangeListener(e -> {
+            int green = Integer.parseInt(greenField.getText());
+            colorSelection.setGreen(green);
+            greenSlider.setValue(green);
+            colorPanel.repaint();
         });
 
-        blueButton.addChangeListener(new ChangeListener() {
-            @Override
-            public void stateChanged(ChangeEvent e) {
-                int blue = Integer.parseInt(blueField.getText());
-                colorSelection.setBlue(blue);
-                blueSlider.setValue(blue);
-                colorPanel.repaint();
-            }
+        blueButton.addChangeListener(e -> {
+            int blue = Integer.parseInt(blueField.getText());
+            colorSelection.setBlue(blue);
+            blueSlider.setValue(blue);
+            colorPanel.repaint();
         });
 
         gbc.gridy = -4;
